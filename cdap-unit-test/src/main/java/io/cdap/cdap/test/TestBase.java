@@ -508,6 +508,7 @@ public class TestBase {
       authorizerInstantiator.get().grant(Authorizable.fromEntityId(NamespaceId.DEFAULT),
                                          principal, ImmutableSet.of(Action.ADMIN));
     }
+    appFabricServer.stopAndWait();
     namespaceAdmin.delete(NamespaceId.DEFAULT);
     authorizerInstantiator.close();
 
